@@ -54,6 +54,50 @@ const [dataFetching, setDataFetching] = useState(
 }
 )
 
+const dataObjInitial = {
+    "coord": {
+        "lon": 85.1167,
+        "lat": 25.6
+    },
+    "weather": [
+        {
+            "id": 721,
+            "main": "Clear",
+            "description": "haze",
+            "icon": "50n"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 0,
+        "feels_like": 35.36,
+        "temp_min": 33.96,
+        "temp_max": 33.96,
+        "pressure": 1005,
+        "humidity": 0
+    },
+    "visibility": 4000,
+    "wind": {
+        "speed": 0,
+        "deg": 100
+    },
+    "clouds": {
+        "all": 0
+    },
+    "dt": 1683905405,
+    "sys": {
+        "type": 1,
+        "id": 9129,
+        "country": "IN",
+        "sunrise": 1683848172,
+        "sunset": 1683896141
+    },
+    "timezone": 19800,
+    "id": 1260086,
+    "name": "Enter Correct City Name",
+    "cod": 200
+}
+
 const weatherIconData = [ 
     {
         weather: 'Mist',
@@ -95,6 +139,8 @@ const getDataFromApi = async () => {
     const data = await response.json()
     if(data.cod !== '404') {
         setDataFetching(data)
+    } else {
+        setDataFetching(dataObjInitial)
     }
     } catch(err) {
         console.error(err)
