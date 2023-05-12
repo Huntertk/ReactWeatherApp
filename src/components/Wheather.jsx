@@ -121,7 +121,7 @@ const weatherIconData = [
     },
     {
         weather: 'Clear',
-        url: 'https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/clear.svg'
+        url: 'https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/clear-day.svg'
     },
     {
         weather: 'Haze',
